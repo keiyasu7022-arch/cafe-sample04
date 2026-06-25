@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  body { margin: 0; }
+  ::selection { background: #cdb79a; color: #2c2a25; }
+  @keyframes bcfloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+</style>
+</helmet>
+
+<div style="font-family: 'Manrope', sans-serif; color: #3a3a36; background: #faf7f1; -webkit-font-smoothing: antialiased; overflow-x: hidden;">
+
+  <!-- Hero variant switcher -->
+  
+
+  <!-- Navbar -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 150; display: flex; align-items: center; justify-content: space-between; padding: 18px 6vw; background: rgba(250,247,241,0.82); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(58,58,54,0.08);">
+    <a href="#top" style="display: flex; align-items: baseline; gap: 9px; text-decoration: none; color: #2c2a25;">
+      <span style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 21px; letter-spacing: -0.01em;">beautiful</span>
+      <span style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 21px; letter-spacing: 0.02em; color: #7a5c3e;">cafe</span>
+    </a>
+    <div style="display: flex; align-items: center; gap: 38px;">
+      <a href="#about" style="text-decoration: none; color: #514e47; font-size: 14px; font-weight: 500; letter-spacing: 0.02em;" style-hover="color:#7a5c3e">About</a>
+      <a href="#menu" style="text-decoration: none; color: #514e47; font-size: 14px; font-weight: 500; letter-spacing: 0.02em;" style-hover="color:#7a5c3e">Menu</a>
+      <a href="#news" style="text-decoration: none; color: #514e47; font-size: 14px; font-weight: 500; letter-spacing: 0.02em;" style-hover="color:#7a5c3e">News</a>
+      <a href="#access" style="display: inline-flex; align-items: center; gap: 7px; text-decoration: none; background: #3a3a36; color: #f5f1e8; font-size: 13px; font-weight: 600; letter-spacing: 0.03em; padding: 11px 20px; border-radius: 999px; transition: all 0.3s ease;" style-hover="background:#2c2a25;transform:translateY(-1px)">予約・アクセス</a>
+    </div>
+  </nav>
+
+  <span id="top"></span>
+
+  <!-- ========== HERO A: full-bleed ========== -->
+  <sc-if value="{{ showA }}" hint-placeholder-val="{{ true }}">
+  <header style="position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; overflow: hidden;">
+    <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=2000&amp;q=80&amp;auto=format&amp;fit=crop'); background-size: cover; background-position: center;"></div>
+    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(34,30,24,0.55) 0%, rgba(34,30,24,0.32) 40%, rgba(34,30,24,0.62) 100%);"></div>
+    <div style="position: relative; z-index: 2; max-width: 760px; padding: 0 28px; color: #f7f3ec;">
+      <p style="font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; margin: 0 0 26px; color: #e6dcc9; font-weight: 500;">Roastery &amp; Coffee Stand</p>
+      <h1 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(44px, 8vw, 92px); line-height: 1.0; margin: 0; letter-spacing: -0.02em;">beautiful<br><span style="font-weight: 600;">cafe</span></h1>
+      <p style="font-size: clamp(15px, 2vw, 19px); line-height: 1.9; margin: 32px auto 0; max-width: 480px; color: #f0e9da; font-weight: 400;">街の喧騒からそっと離れて。<br>こだわりの自家焙煎コーヒーと、<br>手づくりスイーツのある時間を。</p>
+      <div style="display: flex; gap: 14px; justify-content: center; margin-top: 44px; flex-wrap: wrap;">
+        <a href="#menu" style="background: #f5f1e8; color: #2c2a25; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; padding: 15px 30px; border-radius: 999px; transition: all 0.3s ease;" style-hover="transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,0.28)">メニューを見る</a>
+        <a href="#access" style="background: transparent; color: #f5f1e8; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; padding: 15px 30px; border-radius: 999px; border: 1px solid rgba(245,241,232,0.55); transition: all 0.3s ease;" style-hover="background:rgba(245,241,232,0.12);border-color:#f5f1e8">アクセス・予約</a>
+      </div>
+    </div>
+    <div style="position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 9px; color: #e6dcc9; animation: bcfloat 2.6s ease-in-out infinite;">
+      <span style="font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;">Scroll</span>
+      <span style="width: 1px; height: 34px; background: linear-gradient(#e6dcc9, transparent);"></span>
+    </div>
+  </header>
+  </sc-if>
+
+  <!-- ========== HERO B: split ========== -->
+  <sc-if value="{{ showB }}" hint-placeholder-val="{{ true }}">
+  <header style="display: grid; grid-template-columns: 1.05fr 1fr; min-height: 100vh; background: #faf7f1;">
+    <div style="display: flex; flex-direction: column; justify-content: center; padding: 120px clamp(40px, 7vw, 96px) 80px;">
+      <p style="font-size: 13px; letter-spacing: 0.42em; text-transform: uppercase; margin: 0 0 26px; color: #7a5c3e; font-weight: 600;">Roastery &amp; Coffee Stand</p>
+      <h1 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(46px, 6vw, 86px); line-height: 0.98; margin: 0; letter-spacing: -0.02em; color: #2c2a25;">beautiful<br><span style="font-weight: 600;">cafe</span></h1>
+      <p style="font-size: clamp(15px, 1.6vw, 18px); line-height: 1.95; margin: 34px 0 0; max-width: 440px; color: #514e47;">街の喧騒からそっと離れて。こだわりの自家焙煎コーヒーと、手づくりスイーツのある静かな時間を過ごせる、街の隠れ家カフェ。</p>
+      <div style="display: flex; gap: 14px; margin-top: 42px; flex-wrap: wrap;">
+        <a href="#menu" style="background: #3a3a36; color: #f5f1e8; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; padding: 15px 30px; border-radius: 999px; transition: all 0.3s ease;" style-hover="background:#2c2a25;transform:translateY(-2px)">メニューを見る</a>
+        <a href="#access" style="background: transparent; color: #2c2a25; text-decoration: none; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; padding: 15px 30px; border-radius: 999px; border: 1px solid rgba(58,58,54,0.28); transition: all 0.3s ease;" style-hover="border-color:#3a3a36;background:rgba(58,58,54,0.04)">アクセス・予約</a>
+      </div>
+      <div style="display: flex; gap: 40px; margin-top: 64px;">
+        <div>
+          <p style="margin: 0; font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 600; color: #2c2a25;">8:00–20:00</p>
+          <p style="margin: 4px 0 0; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8478;">営業時間</p>
+        </div>
+        <div style="width: 1px; background: rgba(58,58,54,0.12);"></div>
+        <div>
+          <p style="margin: 0; font-family: 'Outfit', sans-serif; font-size: 22px; font-weight: 600; color: #2c2a25;">火曜定休</p>
+          <p style="margin: 4px 0 0; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8478;">定休日</p>
+        </div>
+      </div>
+    </div>
+    <div style="position: relative; overflow: hidden;">
+      <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1400&amp;q=80&amp;auto=format&amp;fit=crop'); background-size: cover; background-position: center;"></div>
+    </div>
+  </header>
+  </sc-if>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about" style="padding: clamp(80px, 12vw, 150px) 6vw; max-width: 1240px; margin: 0 auto;">
+    <div data-reveal="" style="text-align: center; margin-bottom: clamp(56px, 8vw, 96px);">
+      <p style="font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #7a5c3e; font-weight: 600; margin: 0 0 18px;">Our Story</p>
+      <h2 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.2; margin: 0; letter-spacing: -0.01em; color: #2c2a25;">私たちの<span style="font-weight: 600;">こだわり</span></h2>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center; margin-bottom: clamp(56px, 9vw, 110px);">
+      <div data-reveal="" style="border-radius: 4px; overflow: hidden; aspect-ratio: 4/5;">
+        <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=1100&amp;q=80&amp;auto=format&amp;fit=crop" alt="店内の様子" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+      <div data-reveal="">
+        <p style="font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; line-height: 1.45; margin: 0 0 24px; color: #2c2a25; letter-spacing: -0.01em;">一杯のコーヒーが、<br>一日の余白になるように。</p>
+        <p style="font-size: 15px; line-height: 2.0; color: #5a564e; margin: 0;">豆の選定から焙煎、抽出まで、すべて店内で。その日の気温や湿度に合わせて焙煎を微調整し、最も豊かな香りが立つ一杯をお届けします。木のぬくもりに包まれた空間で、どうぞ思い思いの時間を。</p>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 6vw, 88px); align-items: center;">
+      <div data-reveal="" style="order: 2;">
+        <p style="font-family: 'Outfit', sans-serif; font-size: clamp(22px, 3vw, 32px); font-weight: 300; line-height: 1.45; margin: 0 0 24px; color: #2c2a25; letter-spacing: -0.01em;">毎朝、<br>店の奥の小さな厨房から。</p>
+        <p style="font-size: 15px; line-height: 2.0; color: #5a564e; margin: 0;">スイーツはすべて手づくり。素材本来の甘さを生かし、コーヒーに寄り添う優しい味わいに仕上げています。季節ごとに変わるメニューも、ぜひ楽しみにいらしてください。</p>
+      </div>
+      <div data-reveal="" style="order: 1; border-radius: 4px; overflow: hidden; aspect-ratio: 4/5;">
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=1100&amp;q=80&amp;auto=format&amp;fit=crop" alt="自家製スイーツ" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section id="menu" style="background: #f1ebe0; padding: clamp(80px, 12vw, 150px) 6vw;">
+    <div style="max-width: 1240px; margin: 0 auto;">
+      <div data-reveal="" style="text-align: center; margin-bottom: clamp(48px, 7vw, 80px);">
+        <p style="font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #7a5c3e; font-weight: 600; margin: 0 0 18px;">Menu</p>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.2; margin: 0; letter-spacing: -0.01em; color: #2c2a25;">おすすめ<span style="font-weight: 600;">メニュー</span></h2>
+      </div>
+
+      <sc-for list="{{ menu }}" as="group" hint-placeholder-count="3">
+        <div data-reveal="" style="margin-bottom: 64px;">
+          <div style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px;">
+            <h3 style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 22px; letter-spacing: 0.02em; color: #2c2a25; margin: 0;">{{ group.label }}</h3>
+            <span style="flex: 1; height: 1px; background: rgba(58,58,54,0.14);"></span>
+            <span style="font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: #a39a89; font-weight: 600;">{{ group.en }}</span>
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+            <sc-for list="{{ group.items }}" as="item" hint-placeholder-count="3">
+              <div style="background: #faf7f1; border-radius: 4px; overflow: hidden; transition: all 0.35s ease; cursor: default;" style-hover="transform:translateY(-5px);box-shadow:0 16px 34px rgba(58,42,26,0.13)">
+                <div style="aspect-ratio: 3/2; overflow: hidden;">
+                  <img src="{{ item.img }}" alt="{{ item.name }}" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease;" style-hover="transform:scale(1.06)">
+                </div>
+                <div style="padding: 22px 22px 26px;">
+                  <div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px;">
+                    <h4 style="font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 17px; margin: 0; color: #2c2a25;">{{ item.name }}</h4>
+                    <span style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 15px; color: #7a5c3e; white-space: nowrap;">{{ item.price }}</span>
+                  </div>
+                  <p style="font-size: 13px; line-height: 1.75; color: #6b665d; margin: 10px 0 0;">{{ item.desc }}</p>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ========== NEWS ========== -->
+  <section id="news" style="padding: clamp(80px, 12vw, 150px) 6vw; max-width: 1240px; margin: 0 auto;">
+    <div data-reveal="" style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: clamp(40px, 6vw, 64px); flex-wrap: wrap;">
+      <div>
+        <p style="font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #7a5c3e; font-weight: 600; margin: 0 0 18px;">News &amp; Instagram</p>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.2; margin: 0; letter-spacing: -0.01em; color: #2c2a25;">お知らせ</h2>
+      </div>
+      <a href="#" style="display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: #514e47; font-size: 14px; font-weight: 600; letter-spacing: 0.02em;" style-hover="color:#7a5c3e">@beautiful_cafe をフォロー →</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;">
+      <sc-for list="{{ news }}" as="post" hint-placeholder-count="3">
+        <a href="#" data-reveal="" style="text-decoration: none; color: inherit; display: block;" style-hover="opacity:0.94">
+          <div style="aspect-ratio: 1/1; border-radius: 4px; overflow: hidden; margin-bottom: 18px;">
+            <img src="{{ post.img }}" alt="{{ post.title }}" style="width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.55s ease;" style-hover="transform:scale(1.05)">
+          </div>
+          <p style="font-size: 12px; letter-spacing: 0.06em; color: #a39a89; font-weight: 600; margin: 0 0 8px;">{{ post.date }} · {{ post.tag }}</p>
+          <h4 style="font-family: 'Outfit', sans-serif; font-weight: 500; font-size: 17px; line-height: 1.45; margin: 0; color: #2c2a25;">{{ post.title }}</h4>
+        </a>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- ========== ACCESS ========== -->
+  <section id="access" style="background: #2c2a25; color: #e9e3d6; padding: clamp(80px, 12vw, 150px) 6vw;">
+    <div style="max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 6vw, 80px); align-items: stretch;">
+      <div data-reveal="">
+        <p style="font-size: 12px; letter-spacing: 0.4em; text-transform: uppercase; color: #c2a883; font-weight: 600; margin: 0 0 18px;">Access</p>
+        <h2 style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.2; margin: 0 0 40px; letter-spacing: -0.01em; color: #faf7f1;">店舗<span style="font-weight: 600;">情報</span></h2>
+
+        <div style="display: flex; flex-direction: column; gap: 26px;">
+          <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(233,227,214,0.13);">
+            <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9c9485; font-weight: 600; padding-top: 3px;">Address</span>
+            <span style="font-size: 15px; line-height: 1.7; color: #e9e3d6;">〒150-0001<br>東京都渋谷区神宮前0-0-0 ビューティフルビル 1F</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(233,227,214,0.13);">
+            <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9c9485; font-weight: 600; padding-top: 3px;">Hours</span>
+            <span style="font-size: 15px; line-height: 1.7; color: #e9e3d6;">8:00 – 20:00（L.O. 19:30）</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(233,227,214,0.13);">
+            <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9c9485; font-weight: 600; padding-top: 3px;">Closed</span>
+            <span style="font-size: 15px; line-height: 1.7; color: #e9e3d6;">毎週火曜日</span>
+          </div>
+          <div style="display: grid; grid-template-columns: 110px 1fr; gap: 16px; padding-bottom: 22px; border-bottom: 1px solid rgba(233,227,214,0.13);">
+            <span style="font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #9c9485; font-weight: 600; padding-top: 3px;">Tel</span>
+            <span style="font-size: 15px; line-height: 1.7; color: #e9e3d6;">03-0000-0000</span>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; margin-top: 36px;">
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #2c2a25; background: #e9e3d6; font-size: 13px; font-weight: 600; padding: 12px 20px; border-radius: 999px; transition: all 0.3s ease;" style-hover="background:#fff;transform:translateY(-1px)">Instagram</a>
+          <a href="#" style="display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #e9e3d6; border: 1px solid rgba(233,227,214,0.3); font-size: 13px; font-weight: 600; padding: 12px 20px; border-radius: 999px; transition: all 0.3s ease;" style-hover="border-color:#e9e3d6;background:rgba(233,227,214,0.08)">X (Twitter)</a>
+        </div>
+      </div>
+
+      <div data-reveal="" style="position: relative; border-radius: 4px; overflow: hidden; min-height: 380px;">
+        <div style="position: absolute; inset: 0; background-image: url('https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&amp;q=80&amp;auto=format&amp;fit=crop'); background-size: cover; background-position: center; filter: saturate(0.85) brightness(0.92);"></div>
+        <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(44,42,37,0.18), rgba(44,42,37,0.42));"></div>
+        <div style="position: absolute; left: 24px; bottom: 24px; right: 24px; background: rgba(250,247,241,0.95); backdrop-filter: blur(6px); border-radius: 4px; padding: 18px 22px; display: flex; align-items: center; justify-content: space-between; gap: 16px;">
+          <div>
+            <p style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 16px; color: #2c2a25;">beautiful cafe</p>
+            <p style="margin: 4px 0 0; font-size: 12px; color: #6b665d;">神宮前駅 徒歩4分</p>
+          </div>
+          <a href="#" style="text-decoration: none; background: #3a3a36; color: #f5f1e8; font-size: 12px; font-weight: 600; padding: 10px 16px; border-radius: 999px; white-space: nowrap; transition: all 0.3s ease;" style-hover="background:#2c2a25">地図を開く</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width: 1240px; margin: clamp(56px, 8vw, 90px) auto 0; padding-top: 36px; border-top: 1px solid rgba(233,227,214,0.13); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <span style="font-family: 'Outfit', sans-serif; font-weight: 300; font-size: 18px; color: #c2a883;">beautiful <span style="font-weight: 600;">cafe</span></span>
+      <span style="font-size: 12px; color: #8a8275;">© 2026 beautiful cafe. All rights reserved.</span>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { hero: 'B' };
+
+  componentDidMount() {
+    this.revealEls = Array.from(document.querySelectorAll('[data-reveal]'));
+    this.revealEls.forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(28px)';
+      el.style.transition = 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)';
+    });
+    this.io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'none';
+          this.io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    this.revealEls.forEach((el) => this.io.observe(el));
+  }
+
+  componentDidUpdate() {
+    // re-observe any newly mounted reveal elements after a hero switch
+    const els = Array.from(document.querySelectorAll('[data-reveal]'));
+    els.forEach((el) => {
+      if (getComputedStyle(el).transition.indexOf('opacity') === -1) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(28px)';
+        el.style.transition = 'opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)';
+        this.io && this.io.observe(el);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    this.io && this.io.disconnect();
+  }
+
+  tab(active) {
+    return [
+      'border:0','cursor:pointer','font-family:inherit',
+      'font-size:12px','font-weight:600','letter-spacing:0.02em',
+      'padding:8px 15px','border-radius:999px','transition:all 0.25s ease',
+      active ? 'background:#f5f1e8' : 'background:transparent',
+      active ? 'color:#2c2a25' : 'color:#b8b2a6'
+    ].join(';');
+  }
+
+  renderVals() {
+    const hero = this.state.hero;
+    const menu = [
+      {
+        label: 'Coffee', en: 'Hand-roasted',
+        items: [
+          { name: 'ハウスブレンド', price: '¥550', desc: '深煎りの自家焙煎豆。チョコレートのような余韻が広がる定番の一杯。', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80&auto=format&fit=crop' },
+          { name: 'カフェラテ', price: '¥620', desc: 'なめらかなスチームミルクと、丁寧に描くラテアート。', img: 'https://images.unsplash.com/photo-1561882468-9110e03e0f78?w=700&q=80&auto=format&fit=crop' },
+          { name: 'ハンドドリップ', price: '¥680', desc: 'シングルオリジンを一杯ずつ抽出。香りの違いをお楽しみください。', img: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=700&q=80&auto=format&fit=crop&sat=-20' },
+        ]
+      },
+      {
+        label: 'Food', en: 'Freshly made',
+        items: [
+          { name: 'クロックムッシュ', price: '¥980', desc: '香ばしいベシャメルとチーズ。朝にもランチにも。', img: 'https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=700&q=80&auto=format&fit=crop' },
+          { name: 'キッシュプレート', price: '¥1,180', desc: '季節野菜のキッシュに、サラダを添えて。', img: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=700&q=80&auto=format&fit=crop' },
+          { name: 'バタートースト', price: '¥520', desc: '自家製パンに発酵バターをたっぷりと。', img: 'https://images.unsplash.com/photo-1525351484163-7529414344d8?w=700&q=80&auto=format&fit=crop' },
+        ]
+      },
+      {
+        label: 'Dessert', en: 'House-made',
+        items: [
+          { name: 'ベイクドチーズケーキ', price: '¥620', desc: '濃厚なのに後味すっきり。看板スイーツ。', img: 'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=700&q=80&auto=format&fit=crop' },
+          { name: 'ガトーショコラ', price: '¥640', desc: 'しっとり濃密。深煎りコーヒーと好相性。', img: 'https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=700&q=80&auto=format&fit=crop' },
+          { name: '季節のタルト', price: '¥680', desc: 'その時期いちばんの果実を、サクサクの生地に。', img: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=700&q=80&auto=format&fit=crop' },
+        ]
+      },
+    ];
+    const news = [
+      { date: '2026.06.18', tag: 'New', title: '夏季限定「水出しアイスコーヒー」はじめました', img: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?w=700&q=80&auto=format&fit=crop' },
+      { date: '2026.06.10', tag: 'Info', title: '6/24(火)は設備点検のため臨時休業いたします', img: 'https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=700&q=80&auto=format&fit=crop' },
+      { date: '2026.06.02', tag: 'Menu', title: '季節のタルトが「白桃」に変わりました', img: 'https://images.unsplash.com/photo-1464349095431-e9a21285b5f3?w=700&q=80&auto=format&fit=crop' },
+    ];
+    return {
+      showA: hero === 'A',
+      showB: hero === 'B',
+      pickA: () => this.setState({ hero: 'A' }),
+      pickB: () => this.setState({ hero: 'B' }),
+      tabAStyle: this.tab(hero === 'A'),
+      tabBStyle: this.tab(hero === 'B'),
+      menu,
+      news,
+    };
+  }
+}
+</script>
+</body>
+</html>
